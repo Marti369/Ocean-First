@@ -91,6 +91,8 @@ var Coastal = function (countyName) {
             document.querySelector("#wind").innerHTML = "Wind: " + wind
             document.querySelector("#humidity").innerHTML = "Humidity: " + humidity
             document.querySelector("#temp").innerHTML= "Temperature "+ temp
+            document.querySelector("#date").append((moment().format("LL")))
+            document.querySelector("#time").append(moment().format('LT'))
            
 
         })
