@@ -5,33 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean First</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
 <body>
     <header>
-        <h1 class="title is-2">
+        <h1 class="title is-2 has-text-centered">
             <a href="./index.html">Ocean First</a>
         </h1>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a href="#search-html">Search</a>
-                    <a href="#weather-title">Weather</a>
-                    <a href="#info-title">Information </a>
-                </div>
-        </nav>
+        <nav>
+            <ul>
+              <li>
+                <a href="#search-html">Search</a>
+              </li>
+              <li>
+                <a href="#weather-html">Weather</a>
+              </li>
+              <li>
+                <a href="#information-html">Information</a>
+              </li>
 
+            </ul>
+          </nav>
 
 
     </header>
@@ -41,7 +39,7 @@
     </section>
 
     <div class="sectionTitle-1">
-        <h2 class="title is-2">Search Section</h2>
+        <h2 class="title is-2" id="search-html">Search Section</h2>
     </div>
 
     <section class="searchSection">
@@ -55,7 +53,7 @@
             </aside>
     </section>
     <div class="sectionTitle-1 weather-title">
-        <h2 class="title is-2">Weather</h2>
+        <h2 class="title is-2" id="weather-html">Weather</h2>
 
 
         <div class="tile is-ancestor is-full">
@@ -86,48 +84,81 @@
                 </div>
             </div>
         </div>
-        <div class="sectionTitle-1">
-            <h2 class="title is-2 info-title">Information</h2>
+    </div>
+        <div class="sectionTitle-1" id="footerd">
+            <h2 class="title is-2 info-title" id="information-html">Information</h2>
             <div class="tile is-ancestor">
                 <div class="tile is-vertical is-8">
                     <div class="tile">
                         <div class="tile is-parent is-vertical">
                             <article class="tile is-child notification is-primary">
-                                <p class="title">Vertical...</p>
-                                <p class="subtitle">Top tile</p>
+                                <!--Light green section-->
+                                <p class="title">WHY SO MANY OF US WANTED TO BELIEVE IN AN OCEAN CLEANUP SYSTEM THAT JUST BROKE</p>
+                                <p class="subtitle">A much-lauded multimillion-dollar device intended to purge the Pacific Ocean 
+                                    of its plastic waste has broken, as experts suspected it would, NBC News reports. 
+                                    The device is now being towed to port in Hawaii for repairs, highlighting how a project’s 
+                                    hype says more about our expectations than about its likelihood of success.</br>
+                                    <a href="https://www.theverge.com/2019/1/9/18175940/ocean-cleanup-breaks-plastic-pollution-silicon-valley-boyan-slat-wilson" target="blank">Click Here</a> to read the entire article.</p>
                             </article>
                             <article class="tile is-child notification is-warning">
-                                <p class="title">...tiles</p>
-                                <p class="subtitle">Bottom tile</p>
+                                <p class="title">Companies that Contribute to Ocean Clean to create products</p>
+                                <p>Patagonia</br> 
+                                Bureo </br>
+                                4ocean<br>
+                                Adidas and many more...
+                                </p>
                             </article>
                         </div>
+                        <!--Blue section with Picture-->
                         <div class="tile is-parent">
                             <article class="tile is-child notification is-info">
-                                <p class="title">Middle tile</p>
-                                <p class="subtitle">With an image</p>
+                                <p class="title">Examples of Plastic Trash found in Oceans</p>
+                                <p class="subtitle">Photo by: The Ocean Cleanup</p>
                                 <figure class="image is-4by3">
-                                    <img src="https://bulma.io/images/placeholders/640x480.png">
+                                    <img src="./assets/img/plastic_trash.png" alt="pieces of plastic trash found in the ocean">
+                                </figure>
+                            </br>
+                                <figure class="image is-4by3">
+                                    <img src="./assets/img/platic_beach_clean.jpg" alt="beach clean up of plastic">
                                 </figure>
                             </article>
                         </div>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child notification is-danger">
-                            <p class="title">Wide tile</p>
-                            <p class="subtitle">Aligned with the right tile</p>
+                            <p class="title">Commonwealth unites to end scourge of plastic</p>
                             <div class="content">
-                                <!-- Content -->
+                                <p>Countries from across the Commonwealth have today pledged 
+                                    to eliminate avoidable single use plastic in an ambitious 
+                                    bid to clean up the world’s oceans.
+                                <a href="https://www.gov.uk/government/news/commonwealth-unites-to-end-scourge-of-plastic">Click Here</a> to read more from this article!</p>
                             </div>
                         </article>
                     </div>
                 </div>
+                <!--Drak green section-->
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-success">
                         <div class="content">
-                            <p class="title">Tall tile</p>
-                            <p class="subtitle">With even more content</p>
+                            <p class="title">11 ocean-friendly companies like Patagonia and Adidas that are 
+                                removing plastic from our seas and transforming it into cool new products</p>
                             <div class="content">
-                                <!-- Content -->
+                                <p>
+                                    From sunglasses to skateboards, the array of products being made from recycled ocean 
+                                    plastics is growing so rapidly it's dizzying. No, really: Since I began putting this 
+                                    article together the other day, at least three such products have landed on my desk, 
+                                    and my inbox has probably seen twice as many emails alerting me to this brand or that now 
+                                    using recycled ocean plastics in some way.
+                                    If you're having trouble figuring out which brands to support in these endeavors, the short 
+                                    answer is: all of them. (Unless they're selling absolute junk that'll likely end up back in the 
+                                    ocean anyway, or shamelessly hawking snake oil.) It's impossible to fathom how much plastic is really 
+                                    in the ocean. Though the Ellen MacArthur Foundation and the World Economic Forum make claims suggesting that by 2050
+                                     there may be more plastic than fish in the sea, we can't exactly count all the fish in the sea. What we can roughly 
+                                     gather is how much plastic we continue to produce, which, according to a report by PlasticsEurope, totaled about 384 
+                                     million tons in 2018 alone (up from about 369 million tons in 2017).<br>
+                                    <a href ="https://www.businessinsider.com/companies-that-use-recycled-ocean-plastic-in-products">Click Here</a>
+                                    to read this amazing article!
+                                </p>
                             </div>
                         </div>
                     </article>
@@ -135,9 +166,9 @@
             </div>
         </div>
 </body>
-
-<footer class="footer">
-    <div class="content has-text-centered">
+<br>
+<footer class="footer-color has-background-black has-text-link-dark">
+    <div class="content has-text-centered is-size-3">
         <p>
             <strong>Ocean First</strong>
         </p>
