@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.jumbotron {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("../img/reef_plastic.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.header h1 {
+    display: inline-block;
+    font-size: 48px;
+    text-align: center;
+}
+
+nav {
+    padding-top: 15px;
+    margin-right: 20px;
+    font-size: 20px;
+    list-style-type: none;
+    display: inline-block;
+}
+header nav {
+    margin: 7px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  header nav ul li a {
+    padding: 10px 15px;
+    font-weight: 200;
+    font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  
+  header nav ul li a:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow:none;
+  }
+.search-html {
+    width: 100%;
+    display: inline-flex;
+}
+
+.buttons {
+    width: 20%;
+    display: inline-block;
+}
+
+.searchSection {
+    width: 100%;
+}
+
+.api-results {
+    width: 200%;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.sectionTitle-1 {
+    text-align: center;
+}
+
+.forecastStrech {
+    width: 100%;
+}
+
+.footer footer {
+    background-color: black;
+}
+/*
+.footer-color {
+    background-color: black;
+    padding: 55px;
+    font-weight: 300;
+}
