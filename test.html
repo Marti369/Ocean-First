@@ -52,6 +52,47 @@
                 <h2>Information will be displayed here from API call!</h2>
             </aside>
     </section>
+    <!-- section for city info API  -->
+    <div class="sectionTitle-1 weather-title">
+        <h2 class="title is-2" id="weather-html">Ocean Cleanup Info</h2>
+
+
+        <div class="tile is-ancestor is-full">
+            <div class="tile is-vertical is-12 is-full">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child box">
+                            <p> search results</p>
+                            <ul id="cityname"></ul>
+                            <!-- Put any content you want -->
+                        </article>
+                        <article class="tile is-child box">
+                            <p>History</p>
+                            <ul id ="pastCity"></ul>
+                            <!-- Put any content you want -->
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="tile is-child box">                     
+                            <p>Current Beach Info</p>
+                            <h4 id ="site"> </h4>
+                            <h5 id = "address"> </h5>
+                            <a id = "website">                            </a>
+                            <h5 id ="register"> </h5>
+                            <h5 id="start"> </h5>
+                            <h5 id ="end"> </h5>
+                            <h5 id="bring"> </h5>
+                            <h5 id="organization"></h5>
+
+                            <!-- Put any content you want -->
+                        </article>
+                    </div>
+                </div>
+            <br>
+            <br>
+            </div>
+        </div>
+    </div>
     <div class="sectionTitle-1 weather-title">
         <h2 class="title is-2" id="weather-html">Weather</h2>
 
@@ -62,17 +103,20 @@
                     <div class="tile is-parent is-vertical">
                         <article class="tile is-child box">
                             <p> Time will display here</p>
+                            <h5 id ="time"></h5>
+                            
                             <!-- Put any content you want -->
                         </article>
                         <article class="tile is-child box">
                             <p>Date will display here!</p>
+                            <h5 id ="date"></h5>
                             <!-- Put any content you want -->
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">                     
                             <p>Current Weather </p>
-                            <div id = "city"><div>
+                            <h4 id = "city"><h4>
                                 <img id ="icon"/>
                                 <h4 id ="temp"> Temperature: --</h4>
                                 <h5 id = "humidity"> Humidity: --</h5>

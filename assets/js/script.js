@@ -1,10 +1,6 @@
-// the first search result will have the list of beachs near you
-//then the list will display the beach names only based on your search
-//then click on the beach near you
-//and display the beach you clicked on the right.
-//this will display all the informaiton
-
-//creating a function for caostal API
+//added date
+document.querySelector("#date").append((moment().format("LL")))
+document.querySelector("#time").append(moment().format('LT'))
 
 var Coastal = function (countyName) {
   var coastalAPI = "https://api.coastal.ca.gov/ccd/v1/locations";
@@ -36,10 +32,8 @@ var Coastal = function (countyName) {
               ul.appendChild(li);
             }
           }
-          document
-            .getElementById("cityname")
-            .addEventListener("click", function (event) {
-              if (event.target && event.target.nodeName == "LI") {
+          document.getElementById("cityname").addEventListener("click", function (event) 
+          { if (event.target && event.target.nodeName == "LI") {
                 // ideally would use .innerHTML but special case, where the .ID retrieves the information needed.
                 var beachNameId = event.target.id;
 
@@ -52,50 +46,18 @@ var Coastal = function (countyName) {
                 var bring = data[beachNameId].What_to_bring;
                 var organization = data[beachNameId].organization;
 
-                var ul = document.querySelector("#beachinfo");
+                document.querySelector("#site").textContent= "Site Name:" + site
+                document.querySelector("#address").textContent= "Address: " + address
+                document.querySelector("#website").textContent=  website
+                document.querySelector("#website").href= website
 
-                var liSite = document.createElement("li");
-                liSite.className = "panel-blocks";
-                liSite.innerHTML = site;
+                document.querySelector("#register").textContent="Register: " + register
+                document.querySelector("#start").textContent= "Start: " + start
+                document.querySelector("#end").textContent= "End: " + end
+                document.querySelector("#bring").textContent="Bring: " +  bring
+                document.querySelector("#organization").textContent ="Organizaiton: " + organization
 
-                var liAddress = document.createElement("li");
-                liAddress.className = "panel-blocks";
-                liAddress.innerHTML = address;
-
-                var liWebsite = document.createElement("li");
-                liWebsite.className = "panel-blocks";
-                liWebsite.innerHTML = website;
-
-                var liRegister = document.createElement("li");
-                liRegister.className = "panel-blocks";
-                liRegister.innerHTML = register;
-
-                var liStart = document.createElement("li");
-                liStart.className = "panel-blocks";
-                liStart.innerHTML = start;
-
-                var LiEnd = document.createElement("li");
-                LiEnd.className = "panel-blocks";
-                LiEnd.innerHTML = end;
-
-                var liBring = document.createElement("li");
-                liBring.className = "panel-blocks";
-                liBring.innerHTML = bring;
-
-                var liOrganizaiton = document.createElement("li");
-                liOrganizaiton.className = "panel-blocks";
-                liOrganizaiton.innerHTML = organization;
-
-                document.querySelector("#beachinfo").innerHTML = "";
-
-                ul.appendChild(liSite);
-                ul.appendChild(liAddress);
-                ul.appendChild(liWebsite);
-                ul.appendChild(liRegister);
-                ul.appendChild(liStart);
-                ul.appendChild(LiEnd);
-                ul.appendChild(liBring);
-                ul.appendChild(liOrganizaiton);
+            
               }
             });
         });
@@ -107,23 +69,35 @@ var Coastal = function (countyName) {
     fetch(WeatherAPi)
     .then(function(response){
         //request was sucessful
-        var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png"
         if(response.ok)
         response.json().then(function(data){
-            var city = data.name;
+           
             var icon = data.weather[0].icon;
+            var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png"
             var wind = data.wind.speed;
             var humidity= data.main.humidity;
             var temp= data.main.temp;
+            document.querySelector("img").src = ""
+            document.querySelector("#city").innerHTML=""
+            document.querySelector("#wind").innerHTML = ""
+            document.querySelector("#humidity").innerHTML = ""
+            document.querySelector("#temp").innerHTML= ""
+            document.querySelector("#date").innerHTML=""
+            document.querySelector("#time").innerHTML=""
+
          
             document.querySelector("img").src = iconAPI
             document.querySelector("#city").append(countyName)
             document.querySelector("#wind").innerHTML = "Wind: " + wind
             document.querySelector("#humidity").innerHTML = "Humidity: " + humidity
             document.querySelector("#temp").innerHTML= "Temperature "+ temp
+           
 
         })
     })
+    .catch(function (error) {
+      alert("unable to connect");
+    });
 };
 
 var submit = document.querySelector("#submit");
@@ -137,6 +111,8 @@ submit.addEventListener("click", function (event) {
   cityList.push(location);
   localStorage.setItem("cityname", JSON.stringify(cityList));
   Coastal(location);
+
+
 });
 
 function loadStorage() {
@@ -157,10 +133,12 @@ function loadStorage() {
 }
 loadStorage();
 
+//event listener for History
 document.getElementById("pastCity").addEventListener("click", function (event) {
   if (event.target && event.target.nodeName == "LI") {
+   document.querySelector("#cityname").innerHTML=""
+
     var cityHistoryName = event.target.innerHTML;
     Coastal(cityHistoryName);
   }
 });
-
