@@ -27,7 +27,7 @@ var Coastal = function (countyName) {
           for (i = 0; i < data.length; i++) {
             if (!data[i].county_region) continue;
             if (
-              countyName.toUpperCase() === data[i].county_region.toUpperCase()
+              countyName.toUpperCase() === data[i].county_region.toUpperCase().trim()
             ) {
               var site = data[i].site_name;
               var ul = document.querySelector("#cityname");
