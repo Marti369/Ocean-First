@@ -99,6 +99,15 @@ header nav ul li a:hover {
     background-color: black;
 }
 
+.newFont {
+    font-family: 'Tangerine', serif;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.title.is-2 {
+    font-size: 80px;
+}
+
 
 /*
 .footer-color {
