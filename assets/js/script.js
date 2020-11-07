@@ -1,17 +1,24 @@
-//added date and time
+
+//Date: retriving date information from moment() and formating it to disaplay as month, day and year and appending to HTML id date.
 document.querySelector("#date").append(moment().format("LL"));
+
+//Time: retriving time information from moment() and formating it to display as hour: mm appending to HTML id time.
 document.querySelector("#time").append(moment().format("LT"));
 
+
+//Declaring a function with one parameter "countyName"
 var Coastal = function (countyName) {
+
+//API coastal- storing coastal API URL into a variable
   var coastalAPI = "https://api.coastal.ca.gov/ccd/v1/locations";
 
-  //api weather  for current weather of the specific countyName
+  //API weather  for current weather of the specific countyName: storing weather API URL into a variable 
   var WeatherAPi =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     countyName +
     "&appid=829ab038feb797ebd959e94c190da467&units=imperial";
 
-  //api weather for five day weather of specific countyName
+  //API weather for five day weather of specific countyName. sotring five day weather API URL into a variable
   var fiveAPI =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     countyName +
@@ -21,31 +28,44 @@ var Coastal = function (countyName) {
   //this provides the list of beaches specific to the city
   fetch(coastalAPI)
     .then(function (response) {
+
       //request was succesful
       if (response.ok)
         response.json().then(function (data) {
+
+          // API data will retun an array containing beach info
+          //for looping over this array
           for (i = 0; i < data.length; i++) {
+
+            //because the coastal API returns some null data for county region, a condition is created to bypass the nulls 
             if (!data[i].county_region) continue;
+
+            //creating a condition to compare user input with county region data
             if (
               countyName.toUpperCase() === data[i].county_region.toUpperCase().trim()
             ) {
+              
+            //if condition matches, the following code block executes 
+            //retriving site name (beach name)
               var site = data[i].site_name;
               var ul = document.querySelector("#cityname");
               var li = document.createElement("li");
               li.className = "panel-blocks";
 
-              // attaching the value of "i" as an id to the "li" at each met condition (this "i" is matching the id of coastal API)
+              // attaching the value of "i" as an id to the "li" at each met condition (this "i" is matching the index of coastal API)
               li.id = i;
 
               li.innerHTML = site;
               ul.appendChild(li);
             }
           }
+
+          //creating eventlistener for the beach info list, once the list is clicked the list element is retrieved
           document
             .getElementById("cityname")
             .addEventListener("click", function (event) {
               if (event.target && event.target.nodeName == "LI") {
-                // ideally would use .innerHTML but special case, where the .ID retrieves the information needed.
+
                 var beachNameId = event.target.id;
 
                 var site = data[beachNameId].site_name;
@@ -82,7 +102,7 @@ var Coastal = function (countyName) {
     });
 
 
-
+//fetching weather API to retrieve weather info
   fetch(WeatherAPi)
     .then(function (response) {
       //request was sucessful
@@ -114,7 +134,7 @@ var Coastal = function (countyName) {
     });
 
 
-    //five day forecast
+  //fetching five day API to retrieve five day forecast info
   fetch(fiveAPI)
     .then(function (response) {
       //request was successful 
@@ -144,9 +164,11 @@ var Coastal = function (countyName) {
     })
 }
 
-//local storage secton- once clicked city names will be saved/ and 
-//weather as well as five day forecast will appear( this is not saved in storage)
+
+//event listener for the search bar
 var submit = document.querySelector("#submit");
+
+//created an empty array to save the city name in the local storage 
 var cityList = [];
 
 submit.addEventListener("click", function (event) {
@@ -156,31 +178,43 @@ submit.addEventListener("click", function (event) {
   
   //fixing the problem of upper and lowercase words, this turns all entry into lowercase and saves it to localstorage
   locationLowerCase = location.toLowerCase()
-  console.log(locationLowerCase)
   
-  //trying to fix the duplicate problem 
-  //first create a var to store localstorage values
+ //catching duplicate in local storage 
   var totalStorage = JSON.parse(localStorage.getItem("cityname"));
   
-  // if location is not included in the localstorage, then add the city to localstorage
+  // if the city doesnt exist in Localstorage, then add the city to localstorage
   if(!totalStorage.includes(locationLowerCase)){
+
+    // pushing the city (location) to the array
     cityList.push(locationLowerCase);
+
+    // saving the array to the local storage with the key: cityname
     localStorage.setItem("cityname", JSON.stringify(cityList));
   }
 
-
+  // call the Coastal function and pass the user input (location) as paramater
   Coastal(location);
 });
 
 //from local storage , the city names will be displayed
 function loadStorage() {
+
+  // checking the localstorage 
   cityStorage = JSON.parse(localStorage.getItem("cityname"));
+
+  // if empty, 
   if (!cityStorage) {
+
+    // create an empty array in the local storage ( this will prevent the code to throw an error in the console, if the user is 
+    // opening this page for the first time)
     localStorage.setItem("cityname", JSON.stringify(cityList));
+
+    // if not empty, retrieve the local storage and place it back to the array (cityList)
   } else {
     for (i = 0; i < cityStorage.length; i++) {
       cityList.push(cityStorage[i]);
 
+      // once the citynames are retrieved from local storage, they will be shown in the html history search section 
       var pastCityEl = document.getElementById("pastCity");
       var pastCitylist = document.createElement("li");
       pastCitylist.innerHTML = cityStorage[i];
@@ -189,16 +223,20 @@ function loadStorage() {
     }
   }
 }
+
+//calling the function localStorage()in global, (this will be executed when the page is opened or refreshed)
 loadStorage();
 
-//event listener for History
+//event listener for search history section
 document.getElementById("pastCity").addEventListener("click", function (event) {
   if (event.target && event.target.nodeName == "LI") {
     document.querySelector("#cityname").innerHTML = "";
 
+    // once clicked on the desired city, the cityname will be retrieved 
     var cityHistoryName = event.target.innerHTML;
+
+    // calling the Coastal function and passing the cityname to it as paramater
     Coastal(cityHistoryName);
   }
 })
-
 
