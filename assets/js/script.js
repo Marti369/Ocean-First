@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 
 //Date: retriving date information from moment() and formating it to disaplay as month, day and year and appending to HTML id date.
 document.querySelector("#date").append(moment().format("LL"));
@@ -131,6 +133,201 @@ var Coastal = function (countyName) {
           document.querySelector("#time").append(moment().format("LT"));
         });
     });
+>>>>>>> 694d56e69f8fb439133bf5ea1ec8fc54a8ce5ece
+
+//Date: retriving date information from moment() and formating it to disaplay as month, day and year and appending to HTML id date.
+document.querySelector("#date").append(moment().format("LL"));
+
+<<<<<<< HEAD
+//Time: retriving time information from moment() and formating it to display as hour: mm appending to HTML id time.
+document.querySelector("#time").append(moment().format("LT"));
+
+
+//Declaring a function with one parameter "countyName"
+var Coastal = function (countyName) {
+
+  //API coastal- storing coastal API URL into a variable
+  var coastalAPI = "https://api.coastal.ca.gov/ccd/v1/locations";
+
+  //API weather  for current weather of the specific countyName: storing weather API URL into a variable 
+  var WeatherAPi =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    countyName +
+    "&appid=829ab038feb797ebd959e94c190da467&units=imperial";
+
+  //API weather for five day weather of specific countyName. sotring five day weather API URL into a variable
+  var fiveAPI =
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+    countyName +
+    "&appid=829ab038feb797ebd959e94c190da467&units=imperial";
+
+  //making the first request to URL
+  //this provides the list of beaches specific to the city
+  fetch(coastalAPI)
+    .then(function (response) {
+
+      //request was succesful
+      if (response.ok)
+        response.json().then(function (data) {
+
+          // API data will retun an array containing beach info
+          //for looping over this array
+          for (i = 0; i < data.length; i++) {
+
+            //because the coastal API returns some null data for county region, a condition is created to bypass the nulls 
+            if (!data[i].county_region) continue;
+
+            //creating a condition to compare user input with county region data
+            if (
+              countyName.toUpperCase() === data[i].county_region.toUpperCase().trim()
+            ) {
+
+              //if condition matches, the following code block executes 
+              //retriving site name (beach name)
+              var site = data[i].site_name;
+              var ul = document.querySelector("#cityname");
+              var li = document.createElement("li");
+              li.className = "panel-blocks";
+
+              // attaching the value of "i" as an id to the "li" at each met condition (this "i" is matching the index of coastal API)
+              li.id = i;
+
+              li.innerHTML = site;
+              ul.appendChild(li);
+            }
+          }
+
+          //creating eventlistener for the beach info list, once the list is clicked the list element is retrieved
+          document
+            .getElementById("cityname")
+            .addEventListener("click", function (event) {
+              if (event.target && event.target.nodeName == "LI") {
+
+                var beachNameId = event.target.id;
+
+                var site = data[beachNameId].site_name;
+                var address = data[beachNameId].address;
+                var website = data[beachNameId].website;
+                var register = data[beachNameId].how_to_register;
+                var start = data[beachNameId].start_time;
+                var end = data[beachNameId].end_time;
+                var bring = data[beachNameId].What_to_bring;
+                var organization = data[beachNameId].organization;
+
+                document.querySelector("#site").textContent =
+                  "Site Name:" + site;
+                document.querySelector("#address").textContent =
+                  "Address: " + address;
+                document.querySelector("#website").textContent = website;
+                document.querySelector("#website").href = website;
+
+                document.querySelector("#register").textContent =
+                  "Register: " + register;
+                document.querySelector("#start").textContent =
+                  "Start: " + start;
+                document.querySelector("#end").textContent = "End: " + end;
+                document.querySelector("#bring").textContent =
+                  "Bring: " + bring;
+                document.querySelector("#organization").textContent =
+                  "Organizaiton: " + organization;
+              }
+            });
+        });
+    })
+    .catch(function (error) {
+      alert("unable to connect");
+    });
+
+
+  //fetching weather API to retrieve weather info
+  fetch(WeatherAPi)
+    .then(function (response) {
+      //request was sucessful
+      if (response.ok)
+        response.json().then(function (data) {
+          var icon = data.weather[0].icon;
+          var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png";
+          var wind = data.wind.speed;
+          var humidity = data.main.humidity;
+          var temp = data.main.temp;
+          document.querySelector("img").src = "";
+          document.querySelector("#city").innerHTML = "";
+          document.querySelector("#wind").innerHTML = "";
+          document.querySelector("#humidity").innerHTML = "";
+          document.querySelector("#temp").innerHTML = "";
+          document.querySelector("#date").innerHTML = "";
+          document.querySelector("#time").innerHTML = "";
+
+          document.querySelector("img").src = iconAPI;
+          document.querySelector("#city").append(countyName);
+          document.querySelector("#wind").innerHTML = "Wind: " + wind;
+          document.querySelector("#humidity").innerHTML =
+            "Humidity: " + humidity;
+          document.querySelector("#temp").innerHTML = "Temperature " + temp;
+          document.querySelector("#date").append(moment().format("LL"));
+          document.querySelector("#time").append(moment().format("LT"));
+        });
+=======
+  fetch(WeatherAPi)
+    .then(function (response) {
+      //request was sucessful
+      if (response.ok)
+        response.json().then(function (data) {
+          var icon = data.weather[0].icon;
+          var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png";
+          var wind = data.wind.speed;
+          var humidity = data.main.humidity;
+          var temp = data.main.temp;
+          document.querySelector("img").src = "";
+          document.querySelector("#city").innerHTML = "";
+          document.querySelector("#wind").innerHTML = "";
+          document.querySelector("#humidity").innerHTML = "";
+          document.querySelector("#temp").innerHTML = "";
+          document.querySelector("#date").innerHTML = "";
+          document.querySelector("#time").innerHTML = "";
+
+          document.querySelector("img").src = iconAPI;
+          document.querySelector("#city").append(countyName);
+          document.querySelector("#wind").innerHTML = "Wind: " + wind;
+          document.querySelector("#humidity").innerHTML =
+            "Humidity: " + humidity;
+          document.querySelector("#temp").innerHTML = "Temperature " + temp;
+          document.querySelector("#date").append(moment().format("LL"));
+          document.querySelector("#time").append(moment().format("LT"));
+        });
+    });
+
+
+  fetch(WeatherAPi)
+    .then(function (response) {
+      //request was sucessful
+      if (response.ok)
+        response.json().then(function (data) {
+          var icon = data.weather[0].icon;
+          var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png";
+          var wind = data.wind.speed;
+          var humidity = data.main.humidity;
+          var temp = data.main.temp;
+          document.querySelector("img").src = "";
+          document.querySelector("#city").innerHTML = "";
+          document.querySelector("#wind").innerHTML = "";
+          document.querySelector("#humidity").innerHTML = "";
+          document.querySelector("#temp").innerHTML = "";
+          document.querySelector("#date").innerHTML = "";
+          document.querySelector("#time").innerHTML = "";
+
+          document.querySelector("img").src = iconAPI;
+          document.querySelector("#city").append(countyName);
+          document.querySelector("#wind").innerHTML = "Wind: " + wind;
+          document.querySelector("#humidity").innerHTML =
+            "Humidity: " + humidity;
+          document.querySelector("#temp").innerHTML = "Temperature " + temp;
+          document.querySelector("#date").append(moment().format("LL"));
+          document.querySelector("#time").append(moment().format("LT"));
+        });
+
+>>>>>>> 694d56e69f8fb439133bf5ea1ec8fc54a8ce5ece
+    });
 
 
   //fetching five day API to retrieve five day forecast info
@@ -184,6 +381,7 @@ submit.addEventListener("click", function (event) {
 
   // if the city doesnt exist in Localstorage, then add the city to localstorage
   if (!totalStorage.includes(locationLowerCase)) {
+<<<<<<< HEAD
 
     // pushing the city (location) to the array
     cityList.push(locationLowerCase);
@@ -192,6 +390,16 @@ submit.addEventListener("click", function (event) {
     localStorage.setItem("cityname", JSON.stringify(cityList));
   }
 
+=======
+
+    // pushing the city (location) to the array
+    cityList.push(locationLowerCase);
+
+    // saving the array to the local storage with the key: cityname
+    localStorage.setItem("cityname", JSON.stringify(cityList));
+  }
+
+>>>>>>> 694d56e69f8fb439133bf5ea1ec8fc54a8ce5ece
   // call the Coastal function and pass the user input (location) as paramater
   Coastal(location);
 });
