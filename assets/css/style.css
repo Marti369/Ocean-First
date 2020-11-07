@@ -1,6 +1,20 @@
 * {
-    padding: 0;
+    padding: 0px;
     margin: 0;
+}
+
+:root {
+    --primary-color: rgb(78, 150, 209);
+    --secondary-color: rgb(160, 76, 76);
+}
+
+.searchSection {
+    padding: 20px;
+}
+
+body {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .jumbotron {
@@ -10,15 +24,9 @@
     background-image: url("../img/volunteer-tourist-hand-clean-up-garbage-plastic-debris-dirty-beach-into-big-blue-bag.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.7; 
+    opacity: 0.7;
+    padding: 0px;
 }
-
-/* header {
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: white;
-    color: #ffffff;
-} */
 
 .header h1 {
     display: inline-block;
@@ -35,38 +43,33 @@ nav {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-
-
 }
+
 header nav {
     margin: 7px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
-  header nav ul {
+}
+
+header nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     list-style: none;
-  }
-  header nav ul li a {
+}
+
+header nav ul li a {
     padding: 10px 15px;
     font-weight: 200;
     font-size: 1.55vw;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-  
-  header nav ul li a:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {
     background: var(--primary-color);
     color: var(--secondary-color);
-    border-radius: 15px;
-    text-shadow:none;
-  }
-.search-html {
-    width: 100%;
-    display: inline-flex;
 }
 
 .buttons {
@@ -95,14 +98,229 @@ header nav {
 .footer footer {
     background-color: black;
 }
+
+.newFont {
+    font-family: 'Tangerine', serif;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.title.is-2 {
+    font-size: 80px;
+}
+
+
 /*
 .footer-color {
     background-color: black;
     padding: 55px;
     font-weight: 300;
 }*/
+
 .columns {
     margin-left: 5px;
     margin-top: 5px;
     margin-right: 5px;
+}
+
+.adjust {
+    justify-content: center;
+}
+
+.search-html {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 602px;
+}
+
+#pastCity {
+    cursor: pointer
+}
+
+#cityname {
+    cursor: pointer
+}
+
+.smaller {
+    color: red;
+    font-size: 10px
+}
+
+.forecast {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(114, 197, 218, 0.781);
+}
+
+@media screen and (max-width: 980px) {
+    .search-html {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 25px;
+    }
+    nav {
+        padding-top: 15px;
+        margin-right: 20px;
+        font-size: 20px;
+        list-style-type: none;
+        display: inline-block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+    header nav {
+        margin: 7px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+    header nav ul li a {
+        padding: 10px 15px;
+        font-weight: 200;
+        font-size: 15px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    header nav ul li a:hover {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+    }
+}
+
+@media screen and (max-width: 1346px) {
+    .search-html {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 250px;
+    }
+    nav {
+        padding-top: 15px;
+        margin-right: 20px;
+        font-size: 20px;
+        list-style-type: none;
+        display: inline-block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+    header nav {
+        margin: 7px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+    header nav ul li a {
+        padding: 10px 15px;
+        font-weight: 200;
+        font-size: 15px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    header nav ul li a:hover {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .search-html {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 135px;
+    }
+    nav {
+        padding-top: 15px;
+        margin-right: 20px;
+        font-size: 20px;
+        list-style-type: none;
+        display: inline-block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+    header nav {
+        margin: 7px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+    header nav ul li a {
+        padding: 10px 15px;
+        font-weight: 200;
+        font-size: 15px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    header nav ul li a:hover {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .search-html {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 35px;
+    }
+    nav {
+        padding-top: 15px;
+        margin-right: 20px;
+        font-size: 20px;
+        list-style-type: none;
+        display: inline-block;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+    header nav {
+        margin: 7px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+    }
+    header nav ul li a {
+        padding: 10px 15px;
+        font-weight: 200;
+        font-size: 15px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    header nav ul li a:hover {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+    }
 }
