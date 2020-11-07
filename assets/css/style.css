@@ -1,327 +1,383 @@
-* {
-    padding: 0px;
-    margin: 0;
-}
-
-:root {
-    --primary-color: rgb(78, 150, 209);
-    --secondary-color: rgb(160, 76, 76);
-}
-
-.searchSection {
-    padding: 20px;
-}
-
-body {
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.jumbotron {
-    height: 400px;
-    width: 100%;
-    margin-bottom: 25px;
-    background-image: url("../img/volunteer-tourist-hand-clean-up-garbage-plastic-debris-dirty-beach-into-big-blue-bag.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.7;
-    padding: 0px;
-}
-
-.header h1 {
-    display: inline-block;
-    font-size: 48px;
-    text-align: center;
-}
-
-nav {
-    padding-top: 15px;
-    margin-right: 20px;
-    font-size: 20px;
-    list-style-type: none;
-    display: inline-block;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-}
-
-header nav {
-    margin: 7px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-}
-
-header nav ul li a {
-    padding: 10px 15px;
-    font-weight: 200;
-    font-size: 1.55vw;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-header nav ul li a:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.buttons {
-    width: 20%;
-    display: inline-block;
-}
-
-.searchSection {
-    width: 100%;
-}
-
-.api-results {
-    width: 200%;
-    display: inline-block;
-    margin-left: 5px;
-}
-
-.sectionTitle-1 {
-    text-align: center;
-}
-
-.forecastStrech {
-    width: 100%;
-}
-
-.footer footer {
-    background-color: black;
-}
-
-.newFont {
-    font-family: 'Tangerine', serif;
-    text-shadow: 4px 4px 4px #aaa;
-    color: darkgoldenrod;
-}
-
-.title.is-1 {
-    font-size: 80px;
-}
-
-
-/*
-.footer-color {
-    background-color: black;
-    padding: 55px;
-    font-weight: 300;
-}*/
-
-.columns {
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-right: 5px;
-}
-
-.adjust {
-    justify-content: center;
-}
-
-.search-html {
-    width: 65%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 602px;
-}
-
-#pastCity {
-    cursor: pointer
-}
-
-#cityname {
-    cursor: pointer
-}
-
-.smaller {
-    color: red;
-    font-size: 10px
-}
-
-.forecast {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(114, 197, 218, 0.781);
-}
-
-@media screen and (max-width: 980px) {
-    .search-html {
-        width: 25%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 25px;
-    }
-    nav {
-        padding-top: 15px;
-        margin-right: 20px;
-        font-size: 20px;
-        list-style-type: none;
-        display: inline-block;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-    }
-    header nav {
-        margin: 7px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    header nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        list-style: none;
-    }
-    header nav ul li a {
-        padding: 10px 15px;
-        font-weight: 200;
-        font-size: 15px;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    header nav ul li a:hover {
-        background: var(--primary-color);
-        color: var(--secondary-color);
-    }
-}
-
-@media screen and (max-width: 1346px) {
-    .search-html {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 250px;
-    }
-    nav {
-        padding-top: 15px;
-        margin-right: 20px;
-        font-size: 20px;
-        list-style-type: none;
-        display: inline-block;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-    }
-    header nav {
-        margin: 7px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    header nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        list-style: none;
-    }
-    header nav ul li a {
-        padding: 10px 15px;
-        font-weight: 200;
-        font-size: 15px;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    header nav ul li a:hover {
-        background: var(--primary-color);
-        color: var(--secondary-color);
-    }
-}
-
-@media screen and (max-width: 749px) {
-    .search-html {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 135px;
-    }
-    nav {
-        padding-top: 15px;
-        margin-right: 20px;
-        font-size: 20px;
-        list-style-type: none;
-        display: inline-block;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-    }
-    header nav {
-        margin: 7px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    header nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        list-style: none;
-    }
-    header nav ul li a {
-        padding: 10px 15px;
-        font-weight: 200;
-        font-size: 15px;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    header nav ul li a:hover {
-        background: var(--primary-color);
-        color: var(--secondary-color);
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .search-html {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 35px;
-    }
-    nav {
-        padding-top: 15px;
-        margin-right: 20px;
-        font-size: 20px;
-        list-style-type: none;
-        display: inline-block;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-    }
-    header nav {
-        margin: 7px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    header nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        list-style: none;
-    }
-    header nav ul li a {
-        padding: 10px 15px;
-        font-weight: 200;
-        font-size: 15px;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-    header nav ul li a:hover {
-        background: var(--primary-color);
-        color: var(--secondary-color);
-    }
-}
+ * {
+     padding: 0px;
+     margin: 0;
+ }
+ 
+ :root {
+     --primary-color: rgb(78, 150, 209);
+     --secondary-color: rgb(160, 76, 76);
+ }
+ 
+ .searchSection {
+     padding: 20px;
+ }
+ 
+ body {
+     padding-left: 5px;
+     padding-right: 5px;
+ }
+ 
+ .jumbotron {
+     height: 400px;
+     width: 100%;
+     margin-bottom: 25px;
+     background-image: url("../img/volunteer-tourist-hand-clean-up-garbage-plastic-debris-dirty-beach-into-big-blue-bag.jpg");
+     background-size: cover;
+     background-position: center;
+     opacity: 0.7;
+     padding: 0px;
+ }
+ 
+ .header h1 {
+     display: inline-block;
+     font-size: 48px;
+     text-align: center;
+ }
+ 
+ nav {
+     padding-top: 15px;
+     margin-right: 20px;
+     font-size: 20px;
+     list-style-type: none;
+     display: inline-block;
+     position: sticky;
+     position: -webkit-sticky;
+     top: 0;
+ }
+ 
+ header nav {
+     margin: -30px 0 30px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+ }
+ 
+ header nav ul {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     list-style: none;
+ }
+ 
+ header nav ul li a {
+     padding: 10px 15px;
+     font-weight: 200;
+     font-size: 1.55vw;
+     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+ }
+ 
+ header nav ul li a:hover {
+     background: var(--primary-color);
+     color: var(--secondary-color);
+ }
+ 
+ .buttons {
+     width: 20%;
+     display: inline-block;
+ }
+ 
+ .searchSection {
+     width: 100%;
+ }
+ 
+ .api-results {
+     width: 200%;
+     display: inline-block;
+     margin-left: 5px;
+ }
+ 
+ .sectionTitle-1 {
+     text-align: center;
+ }
+ 
+ .forecastStrech {
+     width: 100%;
+ }
+ 
+ .footer footer {
+     background-color: black;
+ }
+ 
+ .newFont {
+     font-family: 'Tangerine', serif;
+     text-shadow: 4px 4px 4px #aaa;
+     color: darkgoldenrod;
+ }
+ 
+ .title.is-1 {
+     font-size: 80px;
+ }
+ 
+ .columns {
+     margin-left: 5px;
+     margin-top: 5px;
+     margin-right: 5px;
+ }
+ 
+ .adjust {
+     justify-content: center;
+ }
+ 
+ .search-html {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding-left: 142px;
+ }
+ 
+ .input {
+     width: 26%;
+     margin-left: 5px;
+ }
+ 
+ .title-pad {
+     padding-bottom: 0px;
+ }
+ 
+ .title-pad2 {
+     padding: 0px;
+ }
+ 
+ #pastCity {
+     cursor: pointer
+ }
+ 
+ #cityname {
+     cursor: pointer
+ }
+ 
+ .smaller {
+     color: red;
+     font-size: 10px
+ }
+ 
+ .forecast {
+     display: flex;
+     justify-content: center;
+     background-color: rgba(114, 197, 218, 0.781);
+ }
+ 
+ @media screen and (max-width: 1346px) {
+     .search-html {
+         width: 80%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding-left: 250px;
+     }
+     nav {
+         padding-top: 15px;
+         margin-right: 20px;
+         font-size: 20px;
+         list-style-type: none;
+         display: inline-block;
+         position: sticky;
+         position: -webkit-sticky;
+         top: 0;
+     }
+     header nav {
+         margin: 7px 0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+     header nav ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         list-style: none;
+     }
+     header nav ul li a {
+         padding: 10px 15px;
+         font-weight: 200;
+         font-size: 15px;
+         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     }
+     header nav ul li a:hover {
+         background: var(--primary-color);
+         color: var(--secondary-color);
+     }
+ }
+ 
+ @media screen and (max-width: 980px) {
+     .search-html {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding-left: 25px;
+     }
+     nav {
+         padding-top: 15px;
+         margin-right: 20px;
+         font-size: 20px;
+         list-style-type: none;
+         display: inline-block;
+         position: sticky;
+         position: -webkit-sticky;
+         top: 0;
+     }
+     header nav {
+         margin: 7px 0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+     header nav ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         list-style: none;
+     }
+     header nav ul li a {
+         padding: 10px 15px;
+         font-weight: 200;
+         font-size: 15px;
+         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     }
+     header nav ul li a:hover {
+         background: var(--primary-color);
+         color: var(--secondary-color);
+     }
+ }
+ 
+ @media screen and (max-width: 749px) {
+     .search-html {
+         width: 150%;
+         display: flex;
+         justify-content: left;
+         align-items: center;
+         padding-left: 0px;
+     }
+     nav {
+         padding-top: 15px;
+         margin-right: 20px;
+         font-size: 20px;
+         list-style-type: none;
+         display: inline-block;
+         position: sticky;
+         position: -webkit-sticky;
+         top: 0;
+     }
+     header nav {
+         margin: 7px 0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+     header nav ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         list-style: none;
+     }
+     header nav ul li a {
+         padding: 10px 15px;
+         font-weight: 200;
+         font-size: 15px;
+         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     }
+     header nav ul li a:hover {
+         background: var(--primary-color);
+         color: var(--secondary-color);
+     }
+     .input {
+         width: 26%;
+         margin-left: 5px;
+     }
+ }
+ 
+ @media screen and (max-width: 690px) {
+     .search-html {
+         width: 150%;
+         display: inherit;
+         justify-content: left;
+         align-items: center;
+         padding-left: 0px;
+     }
+     nav {
+         padding-top: 15px;
+         margin-right: 20px;
+         font-size: 20px;
+         list-style-type: none;
+         display: inline-block;
+         position: sticky;
+         position: -webkit-sticky;
+         top: 0;
+     }
+     header nav {
+         margin: 7px 0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+     header nav ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         list-style: none;
+     }
+     header nav ul li a {
+         padding: 10px 15px;
+         font-weight: 200;
+         font-size: 15px;
+         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     }
+     header nav ul li a:hover {
+         background: var(--primary-color);
+         color: var(--secondary-color);
+     }
+     .input {
+         width: 26%;
+         margin-left: 5px;
+     }
+ }
+ 
+ @media screen and (max-width: 380px) {
+     .search-html {
+         width: 80%;
+         display: initial;
+         justify-content: center;
+         align-items: center;
+         padding-left: 0px;
+     }
+     nav {
+         padding-top: 15px;
+         margin-right: 20px;
+         font-size: 20px;
+         list-style-type: none;
+         display: inline-block;
+         position: sticky;
+         position: -webkit-sticky;
+         top: 0;
+     }
+     header nav {
+         margin: 7px 0;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+     header nav ul {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         align-items: center;
+         list-style: none;
+     }
+     header nav ul li a {
+         padding: 10px 15px;
+         font-weight: 200;
+         font-size: 15px;
+         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     }
+     header nav ul li a:hover {
+         background: var(--primary-color);
+         color: var(--secondary-color);
+     }
+ }
