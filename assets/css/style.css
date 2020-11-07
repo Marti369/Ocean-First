@@ -18,7 +18,7 @@ body {
 }
 
 .jumbotron {
-    height: 600px;
+    height: 400px;
     width: 100%;
     margin-bottom: 25px;
     background-image: url("../img/volunteer-tourist-hand-clean-up-garbage-plastic-debris-dirty-beach-into-big-blue-bag.jpg");
@@ -102,9 +102,10 @@ header nav ul li a:hover {
 .newFont {
     font-family: 'Tangerine', serif;
     text-shadow: 4px 4px 4px #aaa;
+    color: darkgoldenrod;
 }
 
-.title.is-2 {
+.title.is-1 {
     font-size: 80px;
 }
 
