@@ -1,21 +1,32 @@
+ /* This will add a default style of padding and margin to all document */
+ 
  * {
      padding: 0px;
      margin: 0;
  }
+ /* this defines variables for color */
  
  :root {
      --primary-color: rgb(78, 150, 209);
      --secondary-color: rgb(160, 76, 76);
  }
+ /* this add background color */
+ 
+ .background {
+     background-color: rgba(180, 197, 253, 0.527);
+ }
+ /* this adds a Padding of 20px to the Search Section */
  
  .searchSection {
      padding: 20px;
  }
+ /* this gives a padding to left and right so you can see edges */
  
  body {
      padding-left: 5px;
      padding-right: 5px;
  }
+ /* this styles the jumbotron */
  
  .jumbotron {
      height: 400px;
@@ -24,15 +35,19 @@
      background-image: url("../img/volunteer-tourist-hand-clean-up-garbage-plastic-debris-dirty-beach-into-big-blue-bag.jpg");
      background-size: cover;
      background-position: center;
+     box-shadow: 25px 25px 50px 0 rgb(180, 197, 253, 0.527) inset, -25px -25px 50px 0 white inset;
+     border-radius: 5px;
      opacity: 0.7;
      padding: 0px;
  }
+ /*  this styles the h1 in header */
  
  .header h1 {
      display: inline-block;
      font-size: 48px;
      text-align: center;
  }
+ /* the below code styles the nav bar */
  
  nav {
      padding-top: 15px;
@@ -71,53 +86,59 @@
      background: var(--primary-color);
      color: var(--secondary-color);
  }
+ /* this styles the buttons */
  
  .buttons {
      width: 20%;
      display: inline-block;
  }
+ /* this styles the Seach Section */
  
  .searchSection {
      width: 100%;
  }
+ /* Styles for class API resulsts */
  
  .api-results {
      width: 200%;
      display: inline-block;
      margin-left: 5px;
  }
+ /* This aligns the text to center to all section titles */
  
  .sectionTitle-1 {
      text-align: center;
  }
+ /* this streches the forecast to a width of 100% */
  
  .forecastStrech {
      width: 100%;
  }
- 
- .footer footer {
-     background-color: black;
- }
+ /* style for font */
  
  .newFont {
      font-family: 'Tangerine', serif;
      text-shadow: 4px 4px 4px #aaa;
      color: darkgoldenrod;
  }
+ /* style for a font size in all title */
  
  .title.is-1 {
      font-size: 80px;
  }
+ /* styles columns in forecast */
  
  .columns {
      margin-left: 5px;
      margin-top: 5px;
      margin-right: 5px;
  }
+ /* adjusts seach section */
  
  .adjust {
      justify-content: center;
  }
+ /* style the search input and button */
  
  .search-html {
      width: 100%;
@@ -126,19 +147,13 @@
      align-items: center;
      padding-left: 142px;
  }
+ /* gives details to input class */
  
  .input {
      width: 26%;
      margin-left: 5px;
  }
- 
- .title-pad {
-     padding-bottom: 0px;
- }
- 
- .title-pad2 {
-     padding: 0px;
- }
+ /* adds cursor pointer to pastcity, cityname */
  
  #pastCity {
      cursor: pointer
@@ -147,17 +162,20 @@
  #cityname {
      cursor: pointer
  }
+ /* gives font color and size of text to results */
  
  .smaller {
      color: red;
      font-size: 10px
  }
+ /* styles the forecast to be center in middle of page */
  
  .forecast {
      display: flex;
      justify-content: center;
      background-color: rgba(114, 197, 218, 0.781);
  }
+ /* the below styles all media queries for screen sizes */
  
  @media screen and (max-width: 1346px) {
      .search-html {
