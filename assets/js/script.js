@@ -133,66 +133,7 @@ var Coastal = function (countyName) {
     });
 
 
-  fetch(WeatherAPi)
-    .then(function (response) {
-      //request was sucessful
-      if (response.ok)
-        response.json().then(function (data) {
-          var icon = data.weather[0].icon;
-          var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png";
-          var wind = data.wind.speed;
-          var humidity = data.main.humidity;
-          var temp = data.main.temp;
-          document.querySelector("img").src = "";
-          document.querySelector("#city").innerHTML = "";
-          document.querySelector("#wind").innerHTML = "";
-          document.querySelector("#humidity").innerHTML = "";
-          document.querySelector("#temp").innerHTML = "";
-          document.querySelector("#date").innerHTML = "";
-          document.querySelector("#time").innerHTML = "";
-
-          document.querySelector("img").src = iconAPI;
-          document.querySelector("#city").append(countyName);
-          document.querySelector("#wind").innerHTML = "Wind: " + wind;
-          document.querySelector("#humidity").innerHTML =
-            "Humidity: " + humidity;
-          document.querySelector("#temp").innerHTML = "Temperature " + temp;
-          document.querySelector("#date").append(moment().format("LL"));
-          document.querySelector("#time").append(moment().format("LT"));
-        });
-    });
-
-
-  fetch(WeatherAPi)
-    .then(function (response) {
-      //request was sucessful
-      if (response.ok)
-        response.json().then(function (data) {
-          var icon = data.weather[0].icon;
-          var iconAPI = "https://openweathermap.org/img/w/" + icon + ".png";
-          var wind = data.wind.speed;
-          var humidity = data.main.humidity;
-          var temp = data.main.temp;
-          document.querySelector("img").src = "";
-          document.querySelector("#city").innerHTML = "";
-          document.querySelector("#wind").innerHTML = "";
-          document.querySelector("#humidity").innerHTML = "";
-          document.querySelector("#temp").innerHTML = "";
-          document.querySelector("#date").innerHTML = "";
-          document.querySelector("#time").innerHTML = "";
-
-          document.querySelector("img").src = iconAPI;
-          document.querySelector("#city").append(countyName);
-          document.querySelector("#wind").innerHTML = "Wind: " + wind;
-          document.querySelector("#humidity").innerHTML =
-            "Humidity: " + humidity;
-          document.querySelector("#temp").innerHTML = "Temperature " + temp;
-          document.querySelector("#date").append(moment().format("LL"));
-          document.querySelector("#time").append(moment().format("LT"));
-        });
-
-    });
-
+ 
 
   //fetching five day API to retrieve five day forecast info
   fetch(fiveAPI)
