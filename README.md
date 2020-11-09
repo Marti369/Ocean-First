@@ -31,7 +31,7 @@ Below is the list of main objects to be met in staisfying the user/Ocean lover u
  
 
  
- ### Deployed Applications: 
+ ### Deployed Applications: https://marti369.github.io/Ocean-First/
 
 
  ### Screenshots
