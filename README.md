@@ -31,8 +31,12 @@ Below is the list of main objects to be met in staisfying the user/Ocean lover u
  
 
  
- ### Deployed Applications: 
+ ### Deployed Applications: https://marti369.github.io/Ocean-First/
 
 
  ### Screenshots
 
+<img src="https://github.com/Marti369/Ocean-First/blob/index/assets/img/1.png">
+<img src="https://github.com/Marti369/Ocean-First/blob/index/assets/img/2.png">
+<img src="https://github.com/Marti369/Ocean-First/blob/index/assets/img/3.png">
+<img src="https://github.com/Marti369/Ocean-First/blob/index/assets/img/4.png">
